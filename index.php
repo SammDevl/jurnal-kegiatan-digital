@@ -17,6 +17,6 @@ else{
   </head>
   <body>
     <h1>Welcome <?php echo $row["name"]; ?></h1>
-    <a href="logout.php">Logout</a>
+    <a href="logout.php">Logou</a>
   </body>
 </html>
