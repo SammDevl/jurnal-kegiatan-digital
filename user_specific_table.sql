@@ -50,7 +50,7 @@ ALTER TABLE `user_specific_table`
   ADD KEY `user_id` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+--
 --
 
 --
