@@ -39,11 +39,7 @@ CREATE TABLE `tb_user` (
 -- Dumping data for table `tb_user`
 --
 
-INSERT INTO `tb_user` (`id`, `name`, `username`, `email`, `password`) VALUES
-(5, 'Putra', 'putsxlol', 'putra123@gmail.com', 'putrahaha'),
-(6, 'Samuel', 'SmThing', 'samueldipta@gmail.com', 'skidibob'),
-(7, 'Arby', 'jst', 'emailarby@gmail.om', 'wkwkwkwk'),
-(8, 'Nidal', 'nidalgaza', 'nidalemail@gmail.com', '123123');
+
 
 --
 -- Indexes for dumped tables
