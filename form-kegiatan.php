@@ -1,6 +1,22 @@
+<?php
+require 'config.php';
+
+if(!empty($_SESSION["id"])) {
+    $id = $_SESSION["id"];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
+    $userRow = mysqli_fetch_assoc($result);
+  
+    $userDataResult = mysqli_query($conn, "SELECT * FROM user_specific_table WHERE id = $id");
+}
+else {
+    header("Location: login.php");
+}
+?>
+
+
 <link rel='stylesheet' href='style.css'>
 
-<h3> Form Kegiatan <h3>
+<h3> Form Kegiatan </h3>
 
 <form action="" method="post">
     <table>
@@ -25,15 +41,23 @@
 </form>
 
 <?php
-include "config.php";
 
-if(isset($_POST['proses'])){
-    mysqli_query($conn,"insert into data_pegawai set 
-    nama = '$_POST[nama]',
-    alamat = '$_POST[alamat]',
-    no_hp = '$_POST[no_hp]'");
-
-    echo "Data Pegawai Baru Telah Tersimpan";
-    echo "<meta http-equiv=refresh content=1;URL='barang-data.php'>";
+if(isset($_POST['proses'])) {
+    $tbt = mysqli_real_escape_string($conn, $_POST['tbt']);
+    $kegiatan = mysqli_real_escape_string($conn, $_POST['kegiatan']);
+    $keterangan = mysqli_real_escape_string($conn, $_POST['keterangan']);
+    
+    // Simpan data ke database
+    $insertQuery = "INSERT INTO user_specific_table (column1, column2, column3, id) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conn, $insertQuery);
+    mysqli_stmt_bind_param($stmt, "sssi", $tbt, $kegiatan, $keterangan, $id);
+    
+    if(mysqli_stmt_execute($stmt)) {
+        echo "Data Kegiatan Telah Tersimpan";
+        header("Refresh: 1; URL=index.php");
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+    mysqli_stmt_close($stmt);
 }
 ?>

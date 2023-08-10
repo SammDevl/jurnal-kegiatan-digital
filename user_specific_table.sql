@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user_specific_table` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `column1` varchar(255) DEFAULT NULL,
   `column2` varchar(255) DEFAULT NULL,
   `column3` varchar(255) DEFAULT NULL,
@@ -44,32 +43,10 @@ CREATE TABLE `user_specific_table` (
 
 --
 -- Indexes for table `user_specific_table`
---
-ALTER TABLE `user_specific_table`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
 
---
---
---
 
 --
 -- AUTO_INCREMENT for table `user_specific_table`
 --
 ALTER TABLE `user_specific_table`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `user_specific_table`
---
-ALTER TABLE `user_specific_table`
-  ADD CONSTRAINT `user_specific_table_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

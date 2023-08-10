@@ -24,12 +24,24 @@ else{
   
 </head>
 <body>
-
-
+<div class="navbar">
+    <div>
+    <p>Welcome <?php echo $userRow["name"]; ?></p>
+    </div>
+    <div class="dropdown">
+        <p>Action</p>
+        <div class="dropdown-content">
+            <a href="form-kegiatan.php
+          ">Isi Form</a>
+            <a href="index-excel.php">export to <br> .xls</a>
+            <a href="logout.php">Logout</a></a>
+        </div>
+    </div>
+</div>
     <br>
     <br>
     <div class="table">
-    <table border='2' style="margin-left:auto; margin-right:auto; align: middle;">
+    <table border='2' style="margin-left:auto; margin-right:auto;">
     <h2 align="center" style="font-family: 'Montserrat', sans-serif;">User-Specific Data Table</h2>
       <tr>
         <td rowspan="2" align="center">No.</td>
@@ -42,16 +54,18 @@ else{
         <td>DU/DI</td>
         <td>SEKOLAH</td>
       </tr>
-      <?php while ($dataRow = mysqli_fetch_assoc($userDataResult)) { ?>
+      <?php 
+      $no=1;
+      while ($dataRow = mysqli_fetch_assoc($userDataResult)) { ?>
         <tr>
+          <td><?php echo $no; ?></td>
           <td><?php echo $dataRow["column1"]; ?></td>
           <td><?php echo $dataRow["column2"]; ?></td>
           <td><?php echo $dataRow["column3"]; ?></td>
           <td><?php echo $dataRow["column4"]; ?></td>
           <td><?php echo $dataRow["column5"]; ?></td>
-          <td><?php echo $dataRow["column6"]; ?></td>
         </tr>
-      <?php } ?>
+      <?php $no++;} ?>
     </table>
       </div>
   </body>
