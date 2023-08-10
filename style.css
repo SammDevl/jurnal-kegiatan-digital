@@ -16,13 +16,11 @@
   }
 
   @font-face {
-    src: url('font/Product Sans Regular.ttf');
-    font-family: Product Sans;
+    font-family: 'Montserrat', sans-serif;
   }
 
   @font-face {
-    src: url('font/OpenSans-Light.ttf');
-    font-family: OpenSans-Light;
+    font-family: 'Montserrat', sans-serif;
   }
 
   #backlogin form {
@@ -38,7 +36,7 @@
     border: 0px;
     border-bottom: 1px solid #6a82fb;
     font-size: 16px;
-    font-family: OpenSans-Light;
+    font-family: 'Montserrat', sans-serif;
     background: transparent;
   }
 
@@ -49,7 +47,7 @@
     background: #6a82fb;
     border: none;
     color: white;
-    font-family: product sans;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     border-radius: 5px;
   }
@@ -58,7 +56,7 @@
     text-align: center;
     padding: 5px;
     color: #6a82fb;
-    font-family: Product Sans;
+    font-family: 'Montserrat', sans-serif;
   }
 
   #backlogin hr {
