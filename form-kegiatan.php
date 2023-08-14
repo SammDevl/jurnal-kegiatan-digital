@@ -12,17 +12,29 @@ else {
     header("Location: login.php");
 }
 ?>
+<style>
+    form {
+          background-color: #ffffff;
+            padding: 10px;
+            margin: 0 auto;
+            max-width: 450px;
+            border-radius: 5px;
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Montserrat', sans-serif;
+        }
+</style>
 
 
 <link rel='stylesheet' href='style.css'>
 
-<h3> Form Kegiatan </h3>
+
 
 <form action="" method="post">
+<h3 align="center"> Form Kegiatan </h3>
     <table>
         
     <tr>
-        <td widht="130">Tanggal-bulan-tahun</td>
+        <td widht="130">Tanggal/Hari</td>
         <td><input type="text" name="tbt" require></td>
     </tr>
     <tr>

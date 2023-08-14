@@ -64,7 +64,7 @@ else{
           background-color: #ffffff;
             padding: 10px;
             margin: 0 auto;
-            max-width: 700px;
+            max-width: 1200px;
             border-radius: 5px;
             box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
             font-family: 'Montserrat', sans-serif;
@@ -77,6 +77,24 @@ else{
     background-size: cover;
     background-attachment: fixed;
         }
+        
+        .btn-delete{
+    border:1px solid #db5d59;
+    background: #db5d59 url(image/hapus.png) no-repeat 5px 4px;
+    height: 22px;
+    padding-left: 15px;
+    padding-top: 5px;
+    border-radius: 3px;
+}
+
+.btn-update{
+    border: 1px solid #00b3a8;
+    background: #00b3a8 url(image/edit.png) no-repeat 5px 4px;
+    height: 22px;
+    padding-left: 15px;
+    padding-top: 5px;  
+    border-radius: 3px;
+}
     </style>
 </head>
 <body>
@@ -98,14 +116,15 @@ else{
     <br>
     <br>
     <div class="table">
-    <table border='2' style="margin-left:auto; margin-right:auto;">
-    <h2 align="center" style="font-family: 'Montserrat', sans-serif;">User-Specific Data Table</h2>
+    <table border="2" style="margin-left:auto; margin-right:auto; border-collapse: collapse;">
+    <h2 align="center" style="font-family: 'Montserrat', sans-serif;">Jurnal Kegiatan</h2>
       <tr>
         <td rowspan="2" align="center">No.</td>
         <td rowspan="2" align="center">Hari/Tanggal</td>
-        <td rowspan="2" style="width:200px;" align="center">Kegiatan Siswa</td>
+        <td rowspan="2" style="width:800px;" align="center">Kegiatan Siswa</td>
         <td rowspan="2" align="center">Keterangan</td>
         <td colspan="2" align="center">TTD Pembina</td>
+        <td rowspan="2" colspan="2" align="center">Aksi</td>
       </tr>
       <tr>
         <td>DU/DI</td>
@@ -121,9 +140,25 @@ else{
           <td><?php echo $dataRow["column3"]; ?></td>
           <td><?php echo $dataRow["column4"]; ?></td>
           <td><?php echo $dataRow["column5"]; ?></td>
+          <?php echo"<td> <a href='barang-ubah.php?kode=$dataRow[column1]'> <input type='button' class='btn-update'> </a></td>
+          <td><a href='?kode=$dataRow[column1]'><input type='button' class='btn-delete'> </a></td>" ?>
+        
         </tr>
       <?php $no++;} ?>
     </table>
       </div>
+      <?php
+
+if(isset($_GET['kode'])){
+
+    mysqli_query($conn, "delete from user_specific_table where column1='$_GET[kode]'");
+
+    echo "<br>";
+    echo "Data telah terhapus";
+    echo "<meta http-equiv=refresh content=2; URL='index.php'>";
+
+}
+
+?>
   </body>
 </html>
