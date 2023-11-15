@@ -36,29 +36,35 @@ else{
     
 
           }
-        /* Style for the dropdown content */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
+        /* Style for the dropdown */
+.dropdown {
+    cursor: pointer; /* Add this line */
+}
 
-        /* Style for the dropdown items */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
-        /* Show the dropdown contenton hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+/* Style for the dropdown items */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
         .table {
           background-color: #ffffff;
@@ -131,20 +137,28 @@ else{
         <td>SEKOLAH</td>
       </tr>
       <?php 
-      $no=1;
-      while ($dataRow = mysqli_fetch_assoc($userDataResult)) { ?>
-        <tr>
-          <td><?php echo $no; ?></td>
-          <td><?php echo $dataRow["column1"]; ?></td>
-          <td><?php echo $dataRow["column2"]; ?></td>
-          <td><?php echo $dataRow["column3"]; ?></td>
-          <td><?php echo $dataRow["column4"]; ?></td>
-          <td><?php echo $dataRow["column5"]; ?></td>
-          <?php echo"<td><a href='form-ubah.php?id=$dataRow[id]'><input type='button' class='btn-update'></a></td>
-                 <td><a href='?kode=$dataRow[id]'><input type='button' class='btn-delete'> </a></td>" ?>
-        
-        </tr>
-      <?php $no++;} ?>
+$no = 1;
+while ($dataRow = mysqli_fetch_assoc($userDataResult)) { ?>
+    <tr>
+        <td><?php echo $no; ?></td>
+        <td><?php echo $dataRow["column1"]; ?></td>
+        <td><?php echo $dataRow["column2"]; ?></td>
+        <td><?php echo $dataRow["column3"]; ?></td>
+        <td><?php echo $dataRow["column4"]; ?></td>
+        <td><?php echo $dataRow["column5"]; ?></td>
+        <td>
+            <a href='form-ubah.php?id=<?php echo $dataRow["id"]; ?>'>
+                <button class='btn-update'>Update</button>
+            </a>
+        </td>
+        <td>
+            <a href='?kode=<?php echo $dataRow["id"]; ?>'>
+                <button class='btn-delete'>Delete</button>
+            </a>
+        </td>
+    </tr>
+<?php $no++; } ?>
+
     </table>
       </div>
       <?php
