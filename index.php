@@ -55,7 +55,7 @@ else{
             text-align: left;
         }
 
-        /* Show the dropdown content on hover */
+        /* Show the dropdown contenton hover */
         .dropdown:hover .dropdown-content {
             display: block;
         }

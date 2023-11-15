@@ -24,8 +24,9 @@ if(isset($_POST["submit"])){
     "<script> alert('User Not Registered'); </script>";
   }
 }
-?>
-<!DOCTYPE html>
+// hehey
+?> 
+<!DOCTYPE html> 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">

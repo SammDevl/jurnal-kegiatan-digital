@@ -59,7 +59,7 @@ if(isset($_POST['proses'])) {
     $kegiatan = mysqli_real_escape_string($conn, $_POST['kegiatan']);
     $keterangan = mysqli_real_escape_string($conn, $_POST['keterangan']);
     
-    // Simpan data ke database
+    // Simpan data ke database .
     $insertQuery = "INSERT INTO user_specific_table (column1, column2, column3, id) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $insertQuery);
     mysqli_stmt_bind_param($stmt, "sssi", $tbt, $kegiatan, $keterangan, $id);

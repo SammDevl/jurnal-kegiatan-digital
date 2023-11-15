@@ -26,7 +26,7 @@ if(!empty($_SESSION["id"])) {
            // Redirect jika data tidak ditemukan
         }
     } else {
-        // Jika parameter 'column1' tidak ada, arahkan kembali ke halaman index
+        // Jika parameter'column1' tidak ada, arahkan kembali ke halaman index
         
     }
 } else {

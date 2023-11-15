@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="style2.css" >
     <title>Registration</title>
     <script>
-      // JavaScript function to hide or display the success message
+      // JavaScript functionto hide or display the success message
       function showSuccessMessage() {
         var successMessage = document.getElementById("successMessage");
         successMessage.style.display = "block";
