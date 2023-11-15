@@ -19,15 +19,15 @@ if(!empty($_SESSION["id"])) {
 
     // Ambil data dari user_specific_table berdasarkan column1 dan parameter URL 'column1'
     if (isset($_GET['id'])) {
-        $column1Value = mysqli_real_escape_string($conn, $_GET['column1']);
-        $userDataResult = mysqli_query($conn, "SELECT * FROM user_specific_table WHERE id = $id AND column1 = '$column1Value'");
+        $column1Value = mysqli_real_escape_string($conn, $_GET['id']);
+        $userDataResult = mysqli_query($conn, "SELECT * FROM user_specific_table WHERE id = $id ");
         $dataRow = mysqli_fetch_assoc($userDataResult);
         if (!$dataRow) {
-            header("Location: index.php"); // Redirect jika data tidak ditemukan
+           // Redirect jika data tidak ditemukan
         }
     } else {
         // Jika parameter 'column1' tidak ada, arahkan kembali ke halaman index
-        header("Location: index.php");
+        
     }
 } else {
     header("Location: login.php");
@@ -47,9 +47,10 @@ if(!empty($_SESSION["id"])) {
             <td><input type="text" name="kegiatan" value="<?php echo $dataRow['column2']; ?>" required></td>
         </tr>
         <tr>
-            <td>Keterangan</td>
-            <td><input type="text" name="keterangan" value="<?php echo $dataRow['column3']; ?>" required></td>
-        </tr>
+    <td>Keterangan</td>
+    <td><input type="text" name="keterangan" value="<?php echo $dataRow['column3']; ?>"></td>
+</tr>
+
         <tr>
             <td></td>
             <td><input type="submit" value="Update" name="update"></td>

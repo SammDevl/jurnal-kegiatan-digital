@@ -35,7 +35,7 @@ else {
         
     <tr>
         <td widht="130">Tanggal/Hari</td>
-        <td><input type="text" name="tbt" require></td>
+        <td><input type="date" name="tbt" require></td>
     </tr>
     <tr>
         <td>Kegiatan Siswa</td>

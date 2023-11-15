@@ -140,8 +140,8 @@ else{
           <td><?php echo $dataRow["column3"]; ?></td>
           <td><?php echo $dataRow["column4"]; ?></td>
           <td><?php echo $dataRow["column5"]; ?></td>
-          <?php echo"<td><a href='form-ubah.php?id=$dataRow[column1]'><input type='button' class='btn-update'></a></td>
-                 <td><a href='?kode=$dataRow[column1]'><input type='button' class='btn-delete'> </a></td>" ?>
+          <?php echo"<td><a href='form-ubah.php?id=$dataRow[id]'><input type='button' class='btn-update'></a></td>
+                 <td><a href='?kode=$dataRow[id]'><input type='button' class='btn-delete'> </a></td>" ?>
         
         </tr>
       <?php $no++;} ?>
@@ -151,9 +151,9 @@ else{
 
 if(isset($_GET['kode'])){
 
-    mysqli_query($conn, "delete from user_specific_table where column1='$_GET[kode]'");
+    mysqli_query($conn, "delete FROM user_specific_table WHERE id='$_GET[kode]'");
 
-    echo "<meta http-equiv=refresh content:1; URL='index.php'>";
+    echo "<meta http-equiv=refresh content:2; URL='index.php'>";
 
 }
 

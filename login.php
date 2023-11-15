@@ -37,11 +37,12 @@ if(isset($_POST["submit"])){
     <div id="backlogin">
       <h1>Login</h1>
       <hr>
-      <form id="login" action="" method="post" class="" action="" method="post" autocomplete="off"> 
+      <form id="login" action="" method="post" class="" action="" method="post" autocomplete="off">
         <input type="text" class="inputa" name="usernameemail" id="usernameemail" required value="" placeholder="Masukan Username"> 
         <input type="password" class="inputa" name="password" id="password" required value="" placeholder="Masukan password"> 
-        <input type="submit" class="wed"name="submit" value="Submit"> <input type="reset" class="wed" name="" value="Reset"> 
-        <button class="wed"><a style="text-decoration:none; color:white;" href="registration.php">Sign Up</a></button>
+        <input type="submit" class="wed" name="submit" value="Submit">
+    <input type="reset" class="wed" name="" value="Reset">
+    <button type="button" class="wed" onclick="window.location.href='registration.php'">Sign Up</button>
       </form>
     </div>
   </center>
